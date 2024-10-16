@@ -1,0 +1,22 @@
+#background-page {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+}
+
+#background-page video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#background-page::after {
+    content: '';
+    height: inherit;
+    width: inherit;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
