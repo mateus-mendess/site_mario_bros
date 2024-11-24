@@ -16,9 +16,12 @@ header img {
     display: flex;
     align-items: center;
     column-gap: 48px;
-
     list-style: none;
+    position: static;
+    transform: none;
+    transition: none; 
 }
+
 
 .nav-link {
     font-size: 14px;
@@ -51,6 +54,7 @@ header img {
     transition: transform 0.4s;
 }
 
+
 .nav-social {
     margin-left: auto;
     display: flex;
@@ -70,3 +74,72 @@ header img {
     transform: translateY(-5px);
     cursor: pointer;
 }
+
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+}
+
+
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navigation {
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 70vw; 
+        height: 100vh; 
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(-100%); 
+        transition: transform 0.3s ease-in-out; 
+        z-index: 100; 
+    }
+
+    .navigation.active {
+        transform: translateX(0); 
+    }
+
+    .mobile-menu {
+        display: block; 
+        position: relative;
+        z-index: 200; 
+    }
+
+    .mobile-menu div {
+        width: 32px;
+        height: 2px;
+        background: #fff;
+        margin: 8px;
+    }
+
+    .navigation li {
+        margin: 16px 0;
+        opacity: 1; 
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
